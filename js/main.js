@@ -2,7 +2,7 @@
 let a = 24;
 console.log('Тест пройден, переменная =  ', a);
 /*end test*/
-//Diplom begin
+//Diplom beginning
 window.addEventListener('DOMContentLoaded', function () {
 
 		let overlay = document.querySelector('.overlay');
