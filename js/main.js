@@ -5,7 +5,6 @@ console.log('Тест пройден, переменная =  ', a);
 
 window.addEventListener('DOMContentLoaded', function () {
 
-		//Modal
 		let overlay = document.querySelector('.overlay');
 		let create = document.querySelector('#popup-btn');
 		let main = document.querySelector('.main');
