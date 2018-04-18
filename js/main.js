@@ -4,8 +4,9 @@ console.log('Тест пройден, переменная =  ', a);
 /*end test*/
 //Diplom beginning
 
-	//Modal Press
 	window.addEventListener('DOMContentLoaded', function () {
+
+		//Modal Press
 
 			let overlay = document.querySelector('.overlay');
 			let create = document.querySelector('#popup-btn');
