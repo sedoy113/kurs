@@ -24,14 +24,14 @@ console.log('Тест пройден, переменная =  ', a);
 				main.style.display = 'none';
 				custom.style.display = 'flex';
 				for (let i = 0; i < customPress.length; i++ ) {
-				showCustomPress.call(customPress[i])
-				};
+				showCustomPress.call(customPress[i]);
+				}
 
 			});
 
 		function showCustomPress() {
 			this.classList.add('animated','slideInUp');
 			this.style.display = 'block';
-		};
+		}
 
-})
+});
