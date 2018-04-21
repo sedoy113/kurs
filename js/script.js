@@ -16,14 +16,14 @@ window.addEventListener('DOMContentLoaded', function () {
 				main.style.display = 'none';
 				custom.style.display = 'flex';
 			for (let i = 0; i < customTools.length; i++ ) {
-			slideInDown.call(customTools[i]);
+			slideInUp.call(customTools[i]);
 			}
 
 		}
 
 		create.addEventListener('click', toCustomize);
 
-	function slideInDown() {
+	function slideInUp() {
 		this.classList.add('animated','slideInUp');
 		this.style.display = 'block';
 	}
@@ -367,9 +367,9 @@ window.addEventListener('DOMContentLoaded', function () {
 			main.classList.add('fadeIn');
 			main.classList.remove('fadeOut');
 			for (let i = 0; i < mainCardsItem.length; i++ ) {
-				slideInDown.call(mainCardsItem[i])
+				slideInUp.call(mainCardsItem[i])
 			};
-			slideInDown.call(newMainCardsItem);
+			slideInUp.call(newMainCardsItem);
 
 			function transferCustomInfo() {
 				if (isNaN(inputName.value)) {
@@ -397,10 +397,10 @@ window.addEventListener('DOMContentLoaded', function () {
 
 			candidatePhoto.classList.remove('photo-2');
 			candidatePhoto.style.cssText =   `background-image: ${personHair.style.backgroundImage}, \
-																				${personClothes.style.backgroundImage}, \
-																				${personShoes.style.backgroundImage}, \
-																				${personSkin.style.backgroundImage};
-																			   `;
+					${personClothes.style.backgroundImage}, \
+					${personShoes.style.backgroundImage}, \
+					${personSkin.style.backgroundImage};
+					`;
 		   newChooseWinnerFor();
 		 } else {
 		 	checkErrors();
