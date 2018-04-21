@@ -254,13 +254,13 @@ window.addEventListener('DOMContentLoaded', function () {
 
 	function checkName() {
 			if (inputName.value == '') {
-			inputName.style.border = '2px solid rgba(234, 63, 63, 0.7)';
+			inputName.style.border = '2px solid red';
 			inputName.style.transition = '1s';
 			errorMessage.style.display = 'block';
 			errorMessage.classList.add('animated','fadeIn');
 			errorMessage.innerHTML = 'Заполните поле "Фамилия Имя Отчество"'; 
 		} else if (!isNaN(inputName.value) || !pattern.test(inputName.value ) || badPattern.test(inputName.value )) {
-				inputName.style.border = '2px solid rgba(234, 63, 63, 0.7)';
+				inputName.style.border = '2px solid red';
 				inputName.style.transition = '1s';
 				errorMessage.style.display = 'block';
 				errorMessage.classList.add('animated','fadeIn');
@@ -273,13 +273,13 @@ window.addEventListener('DOMContentLoaded', function () {
 
 	function checkAge() {
 		if (inputAge.value == '') {
-										inputAge.style.border = '2px solid rgba(234, 63, 63, 0.7)';
+										inputAge.style.border = '2px solid red';
 										inputAge.style.transition = '1s';
 										errorMessage.style.display = 'block';
 										errorMessage.classList.add('animated','fadeIn');
 										errorMessage.innerHTML = 'Заполните поле "Возраст'; 
 										} else if (inputAge.value < 18 || isNaN(inputAge.value)) {
-												inputAge.style.border = '2px solid rgba(234, 63, 63, 0.7)';
+												inputAge.style.border = '2px solid red';
 												inputAge.style.transition = '1s';
 												errorMessage.style.display = 'block';
 												errorMessage.classList.add('animated','fadeIn');
@@ -292,7 +292,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
 	function checkBio() {
 		if (inputBio.value == '') {
-				inputBio.style.border = '2px solid rgba(234, 63, 63, 0.7)';
+				inputBio.style.border = '2px solid red';
 				inputBio.style.transition = '1s';
 				errorMessage.style.display = 'block';
 				errorMessage.classList.add('animated','fadeIn');
@@ -305,27 +305,27 @@ window.addEventListener('DOMContentLoaded', function () {
 
 	function checkErrors() {
 				if (inputName.value == '') {
-				inputName.style.border = '2px solid rgba(234, 63, 63, 0.7)';
+				inputName.style.border = '2px solid red';
 				inputName.style.transition = '1s';
 				errorMessage.style.display = 'block';
 				errorMessage.classList.add('animated','fadeIn');
 				errorMessage.innerHTML = 'Заполните поле "Фамилия Имя Отчество"'; 
 			} else if (!isNaN(inputName.value) || !pattern.test(inputName.value ) || badPattern.test(inputName.value )) {
-					inputName.style.border = '2px solid rgba(234, 63, 63, 0.7)';
+					inputName.style.border = '2px solid red';
 					inputName.style.transition = '1s';
 					errorMessage.style.display = 'block';
 					errorMessage.classList.add('animated','fadeIn');
 					errorMessage.innerHTML = 'Введите кириллицей в поле "Фамилия Имя Отчество"'; 
 					} else if (inputAge.value == '') {
 							inputName.style.border = '';
-							inputAge.style.border = '2px solid rgba(234, 63, 63, 0.7)';
+							inputAge.style.border = '2px solid red';
 							inputAge.style.transition = '1s';
 							errorMessage.style.display = 'block';
 							errorMessage.classList.add('animated','fadeIn');
 							errorMessage.innerHTML = 'Заполните поле "Возраст'; 
 							} else if (inputAge.value < 18 || isNaN(inputAge.value)) {
 									inputName.style.border = '';
-									inputAge.style.border = '2px solid rgba(234, 63, 63, 0.7)';
+									inputAge.style.border = '2px solid red';
 									inputAge.style.transition = '1s';
 									errorMessage.style.display = 'block';
 									errorMessage.classList.add('animated','fadeIn');
@@ -333,7 +333,7 @@ window.addEventListener('DOMContentLoaded', function () {
 									} else if (inputBio.value == '') {
 										inputName.style.border = '';
 										inputAge.style.border = '';
-										inputBio.style.border = '2px solid rgba(234, 63, 63, 0.7)';
+										inputBio.style.border = '2px solid red';
 										inputBio.style.transition = '1s';
 										errorMessage.style.display = 'block';
 										errorMessage.classList.add('animated','fadeIn');
