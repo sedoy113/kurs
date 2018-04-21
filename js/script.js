@@ -32,9 +32,9 @@ window.addEventListener('DOMContentLoaded', function () {
 	let readyBtn = document.querySelector('#ready');
 	let mainCards = document.querySelector('.main-cards');
 	let mainCardsItem = document.querySelectorAll('.main-cards-item');
-	let inputName = document.querySelector('#name');
-	let inputAge = document.querySelector('#age');
-	let inputSex = document.querySelectorAll('[name = "sex"]');
+	let name = document.querySelector('#name');
+	let age = document.querySelector('#age');
+	let sex = document.querySelectorAll('[name = "sex"]');
 	let inputViews = document.querySelector('#select');
 	let inputBio = document.querySelector('#bio');
 	let personSkin = document.querySelector('.person-skin');
@@ -92,9 +92,9 @@ window.addEventListener('DOMContentLoaded', function () {
 		slides.slice = [].slice;
 		let maleSlides = slides.slice(0, 3);
 		let femaleSlides = slides.slice(3);
-		if (inputSex[0].checked) {
+		if (sex[0].checked) {
 			slides = maleSlides;
-		} else if(inputSex[1].checked) {
+		} else if(sex[1].checked) {
 			slides = femaleSlides;
 		}
 
@@ -113,7 +113,7 @@ window.addEventListener('DOMContentLoaded', function () {
 			for (let i = 0; i < slides.length; i++) {
 				slides[i].style.display = 'none';
 			}
-			if (inputSex[0].checked) {
+			if (sex[0].checked) {
 				for (let i = 0; i < slides.length; i++) {
 				femaleSlides[i].style.display = 'none';
 			}
@@ -146,9 +146,9 @@ window.addEventListener('DOMContentLoaded', function () {
 		slides.slice = [].slice;
 		let maleSlides = slides.slice(0, 3);
 		let femaleSlides = slides.slice(3);
-		if (inputSex[0].checked) {
+		if (sex[0].checked) {
 			slides = maleSlides;
-		} else if(inputSex[1].checked) {
+		} else if(sex[1].checked) {
 			slides = femaleSlides;
 		}
 
@@ -168,7 +168,7 @@ window.addEventListener('DOMContentLoaded', function () {
 			for (let i = 0; i < slides.length; i++) {
 				slides[i].style.display = 'none';
 			};
-			if (inputSex[0].checked) {
+			if (sex[0].checked) {
 				for (let i = 0; i < slides.length; i++) {
 				femaleSlides[i].style.display = 'none';
 			};
@@ -196,11 +196,11 @@ window.addEventListener('DOMContentLoaded', function () {
 
 		function getrand(min, max){
 		return Math.floor(Math.random() * (max - min + 1)) + min;
-	} if (inputSex[0].checked) {
+	} if (sex[0].checked) {
 			skin = maleSkin;
 			hair = maleHair;
 			clothes = maleClothes;
-		} else if(inputSex[1].checked) {
+		} else if(sex[1].checked) {
 			skin = femaleSkin;
 			hair = femaleHair;
 			clothes = femaleClothes;
@@ -211,13 +211,13 @@ window.addEventListener('DOMContentLoaded', function () {
 	chooseСlothes();
 	personShoes.style.backgroundImage = 'url(img/clothes/construct/shoes.png)';
 
-	for (let i = 0; i < inputSex.length; i++) {
-		inputSex[i].addEventListener('change', () => {
-		if (inputSex[0].checked) {
+	for (let i = 0; i < sex.length; i++) {
+		sex[i].addEventListener('change', () => {
+		if (sex[0].checked) {
 			skin = maleSkin;
 			hair = maleHair;
 			clothes = maleClothes;
-		} else if(inputSex[1].checked) {
+		} else if(sex[1].checked) {
 			skin = femaleSkin;
 			hair = femaleHair;
 			clothes = femaleClothes;
@@ -247,45 +247,45 @@ window.addEventListener('DOMContentLoaded', function () {
 	const badPattern = /\w/i;
 
 
-	inputAge.addEventListener('focus', checkAge);
-	inputAge.addEventListener('change', checkAge);
+	age.addEventListener('focus', checkAge);
+	age.addEventListener('change', checkAge);
 
 	inputBio.addEventListener('focus', checkBio);
 
 	function checkName() {
-			if (inputName.value == '') {
-			inputName.style.border = '2px solid red';
-			inputName.style.transition = '1s';
+			if (name.value == '') {
+			name.style.border = '2px solid red';
+			name.style.transition = '1s';
 			errorMessage.style.display = 'block';
 			errorMessage.classList.add('animated','fadeIn');
 			errorMessage.innerHTML = 'Заполните поле "Фамилия Имя Отчество"'; 
-		} else if (!isNaN(inputName.value) || !pattern.test(inputName.value ) || badPattern.test(inputName.value )) {
-				inputName.style.border = '2px solid red';
-				inputName.style.transition = '1s';
+		} else if (!isNaN(name.value) || !pattern.test(name.value ) || badPattern.test(name.value )) {
+				name.style.border = '2px solid red';
+				name.style.transition = '1s';
 				errorMessage.style.display = 'block';
 				errorMessage.classList.add('animated','fadeIn');
 				errorMessage.innerHTML = 'Заполните поле кириллицей "Фамилия Имя Отчество"'; 
 				} else {
-					inputName.style.border = '';
+					name.style.border = '';
 					errorMessage.style.display = 'none';
 				}
 	};
 
 	function checkAge() {
-		if (inputAge.value == '') {
-										inputAge.style.border = '2px solid red';
-										inputAge.style.transition = '1s';
+		if (age.value == '') {
+										age.style.border = '2px solid red';
+										age.style.transition = '1s';
 										errorMessage.style.display = 'block';
 										errorMessage.classList.add('animated','fadeIn');
 										errorMessage.innerHTML = 'Заполните поле "Возраст'; 
-										} else if (inputAge.value < 18 || isNaN(inputAge.value)) {
-												inputAge.style.border = '2px solid red';
-												inputAge.style.transition = '1s';
+										} else if (age.value < 18 || isNaN(age.value)) {
+												age.style.border = '2px solid red';
+												age.style.transition = '1s';
 												errorMessage.style.display = 'block';
 												errorMessage.classList.add('animated','fadeIn');
 												errorMessage.innerHTML = 'Возраст кандидата должен быть от 18 лет'; 
 												} else {
-													inputAge.style.border = '';
+													age.style.border = '';
 													errorMessage.style.display = 'none';
 												};
 	};
@@ -304,43 +304,43 @@ window.addEventListener('DOMContentLoaded', function () {
 	};
 
 	function checkErrors() {
-				if (inputName.value == '') {
-				inputName.style.border = '2px solid red';
-				inputName.style.transition = '1s';
+				if (name.value == '') {
+				name.style.border = '2px solid red';
+				name.style.transition = '1s';
 				errorMessage.style.display = 'block';
 				errorMessage.classList.add('animated','fadeIn');
 				errorMessage.innerHTML = 'Заполните поле "Фамилия Имя Отчество"'; 
-			} else if (!isNaN(inputName.value) || !pattern.test(inputName.value ) || badPattern.test(inputName.value )) {
-					inputName.style.border = '2px solid red';
-					inputName.style.transition = '1s';
+			} else if (!isNaN(name.value) || !pattern.test(name.value ) || badPattern.test(name.value )) {
+					name.style.border = '2px solid red';
+					name.style.transition = '1s';
 					errorMessage.style.display = 'block';
 					errorMessage.classList.add('animated','fadeIn');
 					errorMessage.innerHTML = 'Введите кириллицей в поле "Фамилия Имя Отчество"'; 
-					} else if (inputAge.value == '') {
-							inputName.style.border = '';
-							inputAge.style.border = '2px solid red';
-							inputAge.style.transition = '1s';
+					} else if (age.value == '') {
+							name.style.border = '';
+							age.style.border = '2px solid red';
+							age.style.transition = '1s';
 							errorMessage.style.display = 'block';
 							errorMessage.classList.add('animated','fadeIn');
 							errorMessage.innerHTML = 'Заполните поле "Возраст'; 
-							} else if (inputAge.value < 18 || isNaN(inputAge.value)) {
-									inputName.style.border = '';
-									inputAge.style.border = '2px solid red';
-									inputAge.style.transition = '1s';
+							} else if (age.value < 18 || isNaN(age.value)) {
+									name.style.border = '';
+									age.style.border = '2px solid red';
+									age.style.transition = '1s';
 									errorMessage.style.display = 'block';
 									errorMessage.classList.add('animated','fadeIn');
 									errorMessage.innerHTML = 'Возраст кандидата должен быть от 18 лет'; 
 									} else if (inputBio.value == '') {
-										inputName.style.border = '';
-										inputAge.style.border = '';
+										name.style.border = '';
+										age.style.border = '';
 										inputBio.style.border = '2px solid red';
 										inputBio.style.transition = '1s';
 										errorMessage.style.display = 'block';
 										errorMessage.classList.add('animated','fadeIn');
 										errorMessage.innerHTML = 'Заполните поле "Биография'; 
 									} else {
-											inputName.style.border = '';
-											inputAge.style.border = '';
+											name.style.border = '';
+											age.style.border = '';
 											inputBio.style.border = '';
 											errorMessage.style.display = 'none';
 											};
@@ -349,7 +349,7 @@ window.addEventListener('DOMContentLoaded', function () {
 	
 	readyBtn.addEventListener('click', function() {
 		
-		if (!badPattern.test(inputName.value ) && pattern.test(inputName.value) && isNaN(inputBio.value) && isNaN(inputName.value) && inputName.value != '' && inputAge.value.length == 2 && inputAge.value != '' && inputBio.value != '' && inputAge.value >= 18) {
+		if (!badPattern.test(name.value ) && pattern.test(name.value) && isNaN(inputBio.value) && isNaN(name.value) && name.value != '' && age.value.length == 2 && age.value != '' && inputBio.value != '' && age.value >= 18) {
 
 		newMainCardsItem = mainCardsItem[1].cloneNode(true);
 		mainCards.appendChild(newMainCardsItem);
@@ -372,12 +372,12 @@ window.addEventListener('DOMContentLoaded', function () {
 			slideInUp.call(newMainCardsItem);
 
 			function transferCustomInfo() {
-				if (isNaN(inputName.value)) {
-					candidateName.innerHTML = inputName.value;
+				if (isNaN(name.value)) {
+					candidateName.innerHTML = name.value;
 					candidateBio.innerHTML = inputBio.value;
 				}
 
-				if (inputSex[0].checked) {
+				if (sex[0].checked) {
 					candidateSex.innerHTML = 'Мужской';
 				} else candidateSex.innerHTML = 'Женский';
 			};
