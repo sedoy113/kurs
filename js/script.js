@@ -62,22 +62,21 @@ window.addEventListener('DOMContentLoaded', function () {
 		function showSlides(n) {
 			if (n > slides.length) {
 					slideIndex = 1;
-			}
-			if (n < 1) {
-				slideIndex = slides.length;
-			}
-			for (let i = 0; i < slides.length; i++) {
-				slides[i].style.display = 'none';
-			}
-			slides[slideIndex - 1].style.display = '';
-			personSkin.style.backgroundImage = skin[slideIndex - 1];
+				}
+				if (n < 1) {
+					slideIndex = slides.length;
+					}
+					for (let i = 0; i < slides.length; i++) {
+						slides[i].style.display = 'none';
+						}
+						slides[slideIndex - 1].style.display = '';
+						personSkin.style.backgroundImage = skin[slideIndex - 1];
 
 		}
 
 		function plusSlides(n) {
 			showSlides(slideIndex += n);	
 		}
-
 		prev.addEventListener('click', () => {
 			plusSlides(-1);
 		});
@@ -94,8 +93,8 @@ window.addEventListener('DOMContentLoaded', function () {
 		let femaleSlides = slides.slice(3);
 		if (sex[0].checked) {
 			slides = maleSlides;
-		} else if(sex[1].checked) {
-			slides = femaleSlides;
+			} else if(sex[1].checked) {
+				slides = femaleSlides;
 		}
 
 		let slideIndex = getrand(1, slides.length);
@@ -106,21 +105,21 @@ window.addEventListener('DOMContentLoaded', function () {
 		function showSlides(n) {
 			if (n > slides.length) {
 					slideIndex = 1;
-			}
-			if (n < 1) {
-				slideIndex = slides.length;
-			}
-			for (let i = 0; i < slides.length; i++) {
-				slides[i].style.display = 'none';
-			}
-			if (sex[0].checked) {
-				for (let i = 0; i < slides.length; i++) {
-				femaleSlides[i].style.display = 'none';
-			}
-			} else {
-				for (let i = 0; i < slides.length; i++) {
-				maleSlides[i].style.display = 'none';
-			}
+				}
+				if (n < 1) {
+					slideIndex = slides.length;
+					}
+					for (let i = 0; i < slides.length; i++) {
+						slides[i].style.display = 'none';
+						}
+						if (sex[0].checked) {
+							for (let i = 0; i < slides.length; i++) {
+							femaleSlides[i].style.display = 'none';
+						}
+							} else {
+								for (let i = 0; i < slides.length; i++) {
+								maleSlides[i].style.display = 'none';
+							}
 			}
 			slides[slideIndex - 1].style.display = 'block';
 			personHair.style.backgroundImage = hair[slideIndex - 1];
@@ -148,8 +147,8 @@ window.addEventListener('DOMContentLoaded', function () {
 		let femaleSlides = slides.slice(3);
 		if (sex[0].checked) {
 			slides = maleSlides;
-		} else if(sex[1].checked) {
-			slides = femaleSlides;
+			} else if(sex[1].checked) {
+				slides = femaleSlides;
 		}
 
 		let slideIndex = getrand(1, slides.length);
@@ -161,21 +160,21 @@ window.addEventListener('DOMContentLoaded', function () {
 		function showSlides(n) {
 			if (n > slides.length) {
 					slideIndex = 1;
-			};
-			if (n < 1) {
-				slideIndex = slides.length;
-			};
-			for (let i = 0; i < slides.length; i++) {
-				slides[i].style.display = 'none';
-			};
-			if (sex[0].checked) {
-				for (let i = 0; i < slides.length; i++) {
-				femaleSlides[i].style.display = 'none';
-			};
-			} else {
-				for (let i = 0; i < slides.length; i++) {
-				maleSlides[i].style.display = 'none';
-			};
+				};
+				if (n < 1) {
+					slideIndex = slides.length;
+				};
+					for (let i = 0; i < slides.length; i++) {
+						slides[i].style.display = 'none';
+					};
+					if (sex[0].checked) {
+						for (let i = 0; i < slides.length; i++) {
+						femaleSlides[i].style.display = 'none';
+					};
+						} else {
+							for (let i = 0; i < slides.length; i++) {
+							maleSlides[i].style.display = 'none';
+						};
 			};
 			slides[slideIndex - 1].style.display = 'block';
 			personClothes.style.backgroundImage = clothes[slideIndex - 1];
@@ -200,10 +199,10 @@ window.addEventListener('DOMContentLoaded', function () {
 			skin = maleSkin;
 			hair = maleHair;
 			clothes = maleClothes;
-		} else if(sex[1].checked) {
-			skin = femaleSkin;
-			hair = femaleHair;
-			clothes = femaleClothes;
+			} else if(sex[1].checked) {
+				skin = femaleSkin;
+				hair = femaleHair;
+				clothes = femaleClothes;
 	}
 
 	chooseSkin();
@@ -217,10 +216,10 @@ window.addEventListener('DOMContentLoaded', function () {
 			skin = maleSkin;
 			hair = maleHair;
 			clothes = maleClothes;
-		} else if(sex[1].checked) {
-			skin = femaleSkin;
-			hair = femaleHair;
-			clothes = femaleClothes;
+			} else if(sex[1].checked) {
+				skin = femaleSkin;
+				hair = femaleHair;
+				clothes = femaleClothes;
 		}
 			chooseSkin();
 			chooseHair();
@@ -259,47 +258,47 @@ window.addEventListener('DOMContentLoaded', function () {
 			errorMessage.style.display = 'block';
 			errorMessage.classList.add('animated','fadeIn');
 			errorMessage.innerHTML = 'Заполните поле "Фамилия Имя Отчество"'; 
-		} else if (!isNaN(name.value) || !pattern.test(name.value ) || badPattern.test(name.value )) {
-				name.style.border = '2px solid red';
-				name.style.transition = '1s';
-				errorMessage.style.display = 'block';
-				errorMessage.classList.add('animated','fadeIn');
-				errorMessage.innerHTML = 'Заполните поле кириллицей "Фамилия Имя Отчество"'; 
-				} else {
-					name.style.border = '';
-					errorMessage.style.display = 'none';
-				}
+			} else if (!isNaN(name.value) || !pattern.test(name.value ) || badPattern.test(name.value )) {
+					name.style.border = '2px solid red';
+					name.style.transition = '1s';
+					errorMessage.style.display = 'block';
+					errorMessage.classList.add('animated','fadeIn');
+					errorMessage.innerHTML = 'Заполните поле кириллицей "Фамилия Имя Отчество"'; 
+					} else {
+						name.style.border = '';
+						errorMessage.style.display = 'none';
+					}
 	};
 
 	function checkAge() {
 		if (age.value == '') {
-										age.style.border = '2px solid red';
-										age.style.transition = '1s';
-										errorMessage.style.display = 'block';
-										errorMessage.classList.add('animated','fadeIn');
-										errorMessage.innerHTML = 'Заполните поле "Возраст'; 
-										} else if (age.value < 18 || isNaN(age.value)) {
-												age.style.border = '2px solid red';
-												age.style.transition = '1s';
-												errorMessage.style.display = 'block';
-												errorMessage.classList.add('animated','fadeIn');
-												errorMessage.innerHTML = 'Возраст кандидата должен быть от 18 лет'; 
-												} else {
-													age.style.border = '';
-													errorMessage.style.display = 'none';
-												};
+		age.style.border = '2px solid red';
+		age.style.transition = '1s';
+		errorMessage.style.display = 'block';
+		errorMessage.classList.add('animated','fadeIn');
+		errorMessage.innerHTML = 'Заполните поле "Возраст'; 
+			} else if (age.value < 18 || isNaN(age.value)) {
+			age.style.border = '2px solid red';
+			age.style.transition = '1s';
+			errorMessage.style.display = 'block';
+			errorMessage.classList.add('animated','fadeIn');
+			errorMessage.innerHTML = 'Возраст кандидата должен быть от 18 лет'; 
+				} else {
+					age.style.border = '';
+					errorMessage.style.display = 'none';
+				};
 	};
 
 	function checkBio() {
 		if (inputBio.value == '') {
-				inputBio.style.border = '2px solid red';
-				inputBio.style.transition = '1s';
-				errorMessage.style.display = 'block';
-				errorMessage.classList.add('animated','fadeIn');
-				errorMessage.innerHTML = 'Заполните поле "Биография'; 
+		inputBio.style.border = '2px solid red';
+		inputBio.style.transition = '1s';
+		errorMessage.style.display = 'block';
+		errorMessage.classList.add('animated','fadeIn');
+		errorMessage.innerHTML = 'Заполните поле "Биография'; 
 				} else {
-								inputBio.style.border = '';
-								errorMessage.style.display = 'none';
+				inputBio.style.border = '';
+				errorMessage.style.display = 'none';
 								};
 	};
 
@@ -311,25 +310,25 @@ window.addEventListener('DOMContentLoaded', function () {
 				errorMessage.classList.add('animated','fadeIn');
 				errorMessage.innerHTML = 'Заполните поле "Фамилия Имя Отчество"'; 
 			} else if (!isNaN(name.value) || !pattern.test(name.value ) || badPattern.test(name.value )) {
-					name.style.border = '2px solid red';
-					name.style.transition = '1s';
-					errorMessage.style.display = 'block';
-					errorMessage.classList.add('animated','fadeIn');
-					errorMessage.innerHTML = 'Введите кириллицей в поле "Фамилия Имя Отчество"'; 
+				name.style.border = '2px solid red';
+				name.style.transition = '1s';
+				errorMessage.style.display = 'block';
+				errorMessage.classList.add('animated','fadeIn');
+				errorMessage.innerHTML = 'Введите кириллицей в поле "Фамилия Имя Отчество"'; 
 					} else if (age.value == '') {
-							name.style.border = '';
-							age.style.border = '2px solid red';
-							age.style.transition = '1s';
-							errorMessage.style.display = 'block';
-							errorMessage.classList.add('animated','fadeIn');
-							errorMessage.innerHTML = 'Заполните поле "Возраст'; 
+						name.style.border = '';
+						age.style.border = '2px solid red';
+						age.style.transition = '1s';
+						errorMessage.style.display = 'block';
+						errorMessage.classList.add('animated','fadeIn');
+						errorMessage.innerHTML = 'Заполните поле "Возраст'; 
 							} else if (age.value < 18 || isNaN(age.value)) {
-									name.style.border = '';
-									age.style.border = '2px solid red';
-									age.style.transition = '1s';
-									errorMessage.style.display = 'block';
-									errorMessage.classList.add('animated','fadeIn');
-									errorMessage.innerHTML = 'Возраст кандидата должен быть от 18 лет'; 
+								name.style.border = '';
+								age.style.border = '2px solid red';
+								age.style.transition = '1s';
+								errorMessage.style.display = 'block';
+								errorMessage.classList.add('animated','fadeIn');
+								errorMessage.innerHTML = 'Возраст кандидата должен быть от 18 лет'; 
 									} else if (inputBio.value == '') {
 										name.style.border = '';
 										age.style.border = '';
@@ -339,10 +338,10 @@ window.addEventListener('DOMContentLoaded', function () {
 										errorMessage.classList.add('animated','fadeIn');
 										errorMessage.innerHTML = 'Заполните поле "Биография'; 
 									} else {
-											name.style.border = '';
-											age.style.border = '';
-											inputBio.style.border = '';
-											errorMessage.style.display = 'none';
+										name.style.border = '';
+										age.style.border = '';
+										inputBio.style.border = '';
+										errorMessage.style.display = 'none';
 											};
 
 };
@@ -386,13 +385,13 @@ window.addEventListener('DOMContentLoaded', function () {
 			function resetResultCount() {
 				candidateViews.innerHTML = inputViews.options[inputViews.selectedIndex].value;
 				let progressBar = document.querySelectorAll('.progress-bar');
-				for (let i = 0; i < progressBar.length; i++ ) {
-				progressBar[i].style.height = '0%';
-				};
+					for (let i = 0; i < progressBar.length; i++ ) {
+					progressBar[i].style.height = '0%';
+					};
 				let resultCount = document.querySelectorAll('.result-count');
-				for (let i = 0; i < resultCount.length; i++ ) {
-				resultCount[i].innerHTML = '0%';
-				};
+					for (let i = 0; i < resultCount.length; i++ ) {
+					resultCount[i].innerHTML = '0%';
+					};
 			};
 
 			candidatePhoto.classList.remove('photo-2');
@@ -402,9 +401,8 @@ window.addEventListener('DOMContentLoaded', function () {
 					${personSkin.style.backgroundImage};
 					`;
 		   newChooseWinnerFor();
-		 } else {
-		 	checkErrors();
-		 	
+				 } else {
+				 	checkErrors();
 		 };
 		   
 	});
@@ -418,9 +416,9 @@ window.addEventListener('DOMContentLoaded', function () {
 		let max = Math.max(a, b, c);
 		if (max == a) {
 			mainCardsItem[0].classList.add('main-cards-item-active');
-		} else if (max == b) {
-			mainCardsItem[1].classList.add('main-cards-item-active');
-		} else newMainCardsItem.classList.add('main-cards-item-active');
+			} else if (max == b) {
+				mainCardsItem[1].classList.add('main-cards-item-active');
+				} else newMainCardsItem.classList.add('main-cards-item-active');
 	};
 
 	let votingBtn = document.querySelector('#voting');
@@ -464,51 +462,50 @@ window.addEventListener('DOMContentLoaded', function () {
 
 				if (a == 0 && b == 0) {
 				} else {
-						if (c >= 75) {
-						a = 0;
-						b = 0;
-						c = 100;
-						} else if(a == 0 && c < 75) {
-							a = a;
-							b = (b - 25);
-							c = (c + 25);
-						} else if(b == 0.00 && c < 75) {
-								a = (a - 25);
-								b = b;
-								c = (c + 25);
-							} else if (a == b && c < 75) {
-									a = (a - 12.5);
-									b = (b - 12.5);
-									c = (c + 25);
-								} else if(c < 75) {
-										let a1 = ((a * 100) / (a + b)).toFixed(1);
-										let b1 = (100 - a1).toFixed(1);
-										a1 = (a1 * 25 / 100).toFixed(1);
-										a = (a - a1).toFixed(1);
-										b1 = (25 - a1).toFixed(1);
-										b = (b - b1).toFixed(1);
-										c = (c + 25).toFixed(1);
-									}; 
-
-					progressBar[0].style.height = `${a}%`;
-					progressBar[1].style.height = `${b}%`;
-					progressBar[2].style.height = `${c}%`;
-					resultCount[0].innerHTML = `${a}%`;
-					resultCount[1].innerHTML = `${b}%`;
-					resultCount[2].innerHTML = `${c}%`;
-					setTimeout(chooseWinner(a, b, c), 0);
+				if (c >= 75) {
+				a = 0;
+				b = 0;
+				c = 100;
+				} else if(a == 0 && c < 75) {
+				a = a;
+				b = (b - 25);
+				c = (c + 25);
+			} else if(b == 0.00 && c < 75) {
+				a = (a - 25);
+				b = b;
+				c = (c + 25);
+			} else if (a == b && c < 75) {
+				a = (a - 12.5);
+				b = (b - 12.5);
+				c = (c + 25);
+			} else if(c < 75) {
+			let a1 = ((a * 100) / (a + b)).toFixed(1);
+			let b1 = (100 - a1).toFixed(1);
+				a1 = (a1 * 25 / 100).toFixed(1);
+				a = (a - a1).toFixed(1);
+				b1 = (25 - a1).toFixed(1);
+				b = (b - b1).toFixed(1);
+				c = (c + 25).toFixed(1);
+						}; 
+				progressBar[0].style.height = `${a}%`;
+				progressBar[1].style.height = `${b}%`;
+				progressBar[2].style.height = `${c}%`;
+				resultCount[0].innerHTML = `${a}%`;
+				resultCount[1].innerHTML = `${b}%`;
+				resultCount[2].innerHTML = `${c}%`;
+				setTimeout(chooseWinner(a, b, c), 0);
 				}
 
 	});
 		//Сбросить результаты
 		
-		let resetBtn = document.querySelector('#reset');
+	let resetBtn = document.querySelector('#reset');
 
-		resetBtn.addEventListener('click', function() {
-			newMainCardsItem.remove();
-			newChooseWinnerFor();
-			checkErrors();
-		});
-		resetBtn.addEventListener('click', toCustomize);
+	resetBtn.addEventListener('click', function() {
+		newMainCardsItem.remove();
+		newChooseWinnerFor();
+		checkErrors();
+	});
+	resetBtn.addEventListener('click', toCustomize);
 
 })
