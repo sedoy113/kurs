@@ -478,14 +478,6 @@ window.addEventListener('DOMContentLoaded', function () {
 				a = (a - 12.5);
 				b = (b - 12.5);
 				c = (c + 25);
-			} else if(c < 75) {
-			let a1 = ((a * 100) / (a + b)).toFixed(1);
-			let b1 = (100 - a1).toFixed(1);
-				a1 = (a1 * 25 / 100).toFixed(1);
-				a = (a - a1).toFixed(1);
-				b1 = (25 - a1).toFixed(1);
-				b = (b - b1).toFixed(1);
-				c = (c + 25).toFixed(1);
 						}; 
 				progressBar[0].style.height = `${a}%`;
 				progressBar[1].style.height = `${b}%`;

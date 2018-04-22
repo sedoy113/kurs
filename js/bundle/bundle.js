@@ -5,20 +5,20 @@ window.addEventListener('DOMContentLoaded', function() {
 	let kandidat = require('../parts/kandidat.js');
 	let voting = require('../parts/voting.js');
 	let cheat = require('../parts/cheat.js');
-	let reset = require('../parts/reset.js');
+
 
 	modal();
 	kandidat();
 	voting();
 	cheat();
-	reset();
+
 
 
 });
 
 
 
-},{"../parts/cheat.js":2,"../parts/kandidat.js":3,"../parts/modal.js":4,"../parts/reset.js":5,"../parts/voting.js":6}],2:[function(require,module,exports){
+},{"../parts/cheat.js":2,"../parts/kandidat.js":3,"../parts/modal.js":4,"../parts/voting.js":5}],2:[function(require,module,exports){
 function cheat() {
 		//накрутка под себя
 		let crimeBtn = document.querySelector('#crime');
@@ -489,21 +489,6 @@ function modal() {
 
 module.exports = modal;
 },{}],5:[function(require,module,exports){
-function reset() {
-		//Сбросить результаты
-		
-	let resetBtn = document.querySelector('#reset');
-
-	resetBtn.addEventListener('click', function() {
-		newMainCardsItem.remove();
-		newChooseWinnerFor();
-		checkErrors();
-	});
-	resetBtn.addEventListener('click', toCustomize);
-}
-
-module.exports = reset;
-},{}],6:[function(require,module,exports){
 function voting() {
 	//Честное голосование
 
@@ -544,6 +529,17 @@ function voting() {
 		randomVotes();
 
 	});
+
+	//Сбросить результаты
+		
+	let resetBtn = document.querySelector('#reset');
+
+	resetBtn.addEventListener('click', function() {
+		newMainCardsItem.remove();
+		newChooseWinnerFor();
+		checkErrors();
+	});
+	resetBtn.addEventListener('click', toCustomize);
 }
 
 module.exports = voting;
