@@ -1,4 +1,4 @@
-function kandidat() {
+function candidat() {
 		//кандидат
 		let readyBtn = document.querySelector('#ready');
 		let mainCards = document.querySelector('.main-cards');
@@ -379,4 +379,4 @@ function kandidat() {
 		});
 }
 
-module.exports = kandidat;
+module.exports = candidat;
