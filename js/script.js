@@ -458,7 +458,7 @@ window.addEventListener('DOMContentLoaded', function () {
 				let b = parseInt(progressBar[1].style.height);
 				let c = parseInt(progressBar[2].style.height);
 
-				let multiplier;
+				let cheat;
 
 				if (a == 0 && b == 0) {
 				} else {
