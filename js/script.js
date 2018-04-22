@@ -470,13 +470,17 @@ window.addEventListener('DOMContentLoaded', function () {
 				a = a;
 				b = (b - 25);
 				c = (c + 25);
-			} else if(b == 0.00 && c < 75) {
+			} else if(b == 0 && c < 75) {
 				a = (a - 25);
 				b = b;
 				c = (c + 25);
 			} else if (a == b && c < 75) {
-				a = (a - 12.5);
-				b = (b - 12.5);
+				a = (a - 12);
+				b = (b - 12);
+				c = (c + 25);
+			} else if(c < 75) {
+				a = (a - 25);
+				b = b;
 				c = (c + 25);
 						}; 
 				progressBar[0].style.height = `${a}%`;
