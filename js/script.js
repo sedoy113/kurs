@@ -531,7 +531,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
 				if (firstCandidate > secondCandidate) {
 					if (firstCandidate > thirdCandidate) myCards[0].classList.add('main-cards-item-active');
-					else mainCards[2].classList.add('main-cards-item-active');
+					else myCards[2].classList.add('main-cards-item-active');
 				} else {
 					if (secondCandidate > thirdCandidate) myCards[1].classList.add('main-cards-item-active');
 					else myCards[2].classList.add('main-cards-item-active');
@@ -585,7 +585,7 @@ window.addEventListener('DOMContentLoaded', function () {
 				}
 
 	});*/
-	
+
 		//Сбросить результаты
 		
 	let resetBtn = document.querySelector('#reset');
