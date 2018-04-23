@@ -579,8 +579,7 @@
 
 .cleaner-btn {
   display: block;
-  margin-left: -320px;
-  margin-top: -60px;
+  margin: -65px -500px;
   width: 270px;
   height: 45px;
   line-height: 45px;
