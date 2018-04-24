@@ -348,7 +348,7 @@ window.addEventListener('DOMContentLoaded', function () {
 	
 	readyBtn.addEventListener('click', function() {
 		
-		if (!badPattern.test(name.value ) && pattern.test(name.value) && isNaN(inputBio.value) && isNaN(name.value) && name.value != '' && age.value.length == 2 && age.value != '' && inputBio.value != '' && age.value >= 18) {
+		if (!badPattern.test(name.value ) && pattern.test(name.value) && isNaN(name.value) && name.value != '' && age.value.length == 2 && age.value != '' && inputBio.value != '' && age.value >= 18) {
 
 		newMainCardsItem = mainCardsItem[1].cloneNode(true);
 		mainCards.appendChild(newMainCardsItem);
@@ -410,42 +410,76 @@ window.addEventListener('DOMContentLoaded', function () {
 
 	//Честное голосование
 
-	let counter = 0;
-	
-	function chooseWinner(a, b, c) {
-		let max = Math.max(a, b, c);
-		if (max == a) {
-			mainCardsItem[0].classList.add('main-cards-item-active');
-			} else if (max == b) {
-				mainCardsItem[1].classList.add('main-cards-item-active');
-				} else newMainCardsItem.classList.add('main-cards-item-active');
-	};
+let votingBtn = document.getElementById('voting'),
+		myBlocks = document.getElementsByClassName('result-count'),
+		progresBlocks = document.getElementsByClassName('progress-bar'),
+		maiCards = document.getElementsByClassName('main-cards-item');
 
-	let votingBtn = document.querySelector('#voting');
+	votingBtn.addEventListener('click', () => {
 
-	votingBtn.addEventListener('click', function() {
-		newChooseWinnerFor();
-		let progressBar = document.querySelectorAll('.progress-bar');
-		let resultCount = document.querySelectorAll('.result-count');
-		
-		function randomVotes() {
-			let a = getrand(1, 100);
-			let b = 100 - a;
-			b = getrand(1, b);
-			let c = 100 - (a + b);
 
-			progressBar[0].style.height = `${a}%`;
-			progressBar[1].style.height = `${b}%`;
-			progressBar[2].style.height = `${c}%`;
-			resultCount[0].innerHTML = `${a}%`;
-			resultCount[1].innerHTML = `${b}%`;
-			resultCount[2].innerHTML = `${c}%`;
+		let first = 0.0,
+			second = 0.0,
+			third = 0.0,
+			total = 0.0;
 
-			setTimeout(chooseWinner(a, b, c), 0);
+		first = rand();
+		second = rand();
+		third = rand();
 
-		};
-		randomVotes();
+		function rand() {
+			return Math.round(Math.random() * 100);
+		}
 
+		total = first + second + third;
+
+		let firstCandidate = getPercent(first),
+			secondCandidate = getPercent(second),
+			thirdCandidate = getPercent(third);
+
+		function getPercent(number){
+			return Math.round((100 / total) * number);
+		}
+
+		let temp = 0;
+
+		if (firstCandidate + secondCandidate + thirdCandidate == 99){
+
+			temp = Math.random();
+
+			if (temp <= 0.333) firstCandidate++;
+			else if (temp <= 0.666) secondCandidate++;
+			else thirdCandidate++;
+
+		} else if (firstCandidate + secondCandidate + thirdCandidate == 101){
+
+			temp = Math.random();
+
+			if (temp <= 0.333) firstCandidate--;
+			else if (temp <= 0.666) secondCandidate--;
+			else thirdCandidate--;
+
+		}
+
+		myBlocks[0].innerHTML = firstCandidate + '%';
+		myBlocks[1].innerHTML = secondCandidate + '%';
+		myBlocks[2].innerHTML = thirdCandidate + '%';
+
+		for (let i = 0; i < maiCards.length; i++){
+			maiCards[i].classList.remove('main-cards-item-active');
+		}
+
+		if (firstCandidate > secondCandidate) {
+			if (firstCandidate > thirdCandidate) maiCards[0].classList.add('main-cards-item-active');
+			else maiCards[2].classList.add('main-cards-item-active');
+		} else {
+			if (secondCandidate > thirdCandidate) maiCards[1].classList.add('main-cards-item-active');
+			else maiCards[2].classList.add('main-cards-item-active');
+		}
+
+		progresBlocks[0].style.height = `${firstCandidate}%`;
+		progresBlocks[1].style.height = `${secondCandidate}%`;
+		progresBlocks[2].style.height = `${thirdCandidate}%`;
 	});
 
 		//накрутка под себя
