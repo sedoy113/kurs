@@ -429,9 +429,9 @@ window.addEventListener('DOMContentLoaded', function () {
 		let resultCount = document.querySelectorAll('.result-count');
 		
 		function randomVotes() {
-			let a = getrand(0, 100);
+			let a = getrand(1, 100);
 			let b = 100 - a;
-			b = getrand(0, b);
+			b = getrand(1, b);
 			let c = 100 - (a + b);
 
 			progressBar[0].style.height = `${a}%`;
